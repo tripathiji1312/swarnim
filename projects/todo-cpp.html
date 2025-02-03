@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="TODO app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App | Tripathiji Projects</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- AOS CSS for scroll animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Custom CSS (reuse same stylesheet for consistency) -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        /* Optional extra styles for the project page */
+        .project-content h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .project-content h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .project-content p,
+        .project-content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .project-content ul {
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        .project-content code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (reuse same header as index.html) -->
+    <header class="header">
+        <div class="container header-top">
+            <div class="logo">
+                <a href="../index.html">tripathiji</a>
+            </div>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="../index.html#hero">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#tech">Tech</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button id="themeToggle" aria-label="Toggle Theme">
+                    <span class="theme-icon material-icons">light_mode</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="navMobile">
+            <ul>
+                <li><a href="../index.html#hero" class="mobile-link">Home</a></li>
+                <li><a href="../index.html#about" class="mobile-link">About</a></li>
+                <li><a href="../index.html#tech" class="mobile-link">Tech</a></li>
+                <li><a href="../index.html#projects" class="mobile-link">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section project-content" data-aos="fade-up">
+            <div class="container">
+                <h2>TODO App</h2>
+                <p>
+                    This will help u manage and make todo list :)
+                </p>
+
+                <p>
+                    For more details and to view the complete source code, please visit the project repository:
+                </p>
+                <p>
+                    <a href="https://github.com/tripathiji1312/todo-cpp" target="_blank"
+                        class="project-link">View on GitHub</a>
+                </p>
+
+                <a href="../index.html#projects" class="btn">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" data-aos="fade-up">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Tripathiji. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS & Custom Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        AOS.init({ once: true, easing: 'ease-in-out' });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

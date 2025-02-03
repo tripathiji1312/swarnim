@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="Decision Tree Regressor with Mean Absolute Error (MAE) Calculation for ml-decision-tree-mae project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decision Tree Regressor with Mean Absolute Error (MAE) Calculation | Tripathiji Projects</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- AOS CSS for scroll animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Custom CSS (reuse same stylesheet for consistency) -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+        /* Optional extra styles for the project page */
+        .project-content h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-align: center;
+        }
+
+        .project-content h3 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .project-content p,
+        .project-content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .project-content ul {
+            margin-left: 20px;
+            list-style: disc;
+        }
+
+        .project-content code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header (reuse same header as index.html) -->
+    <header class="header">
+        <div class="container header-top">
+            <div class="logo">
+                <a href="../index.html">tripathiji</a>
+            </div>
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="../index.html#hero">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#tech">Tech</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button id="themeToggle" aria-label="Toggle Theme">
+                    <span class="theme-icon material-icons">light_mode</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="navMobile">
+            <ul>
+                <li><a href="../index.html#hero" class="mobile-link">Home</a></li>
+                <li><a href="../index.html#about" class="mobile-link">About</a></li>
+                <li><a href="../index.html#tech" class="mobile-link">Tech</a></li>
+                <li><a href="../index.html#projects" class="mobile-link">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="section project-content" data-aos="fade-up">
+            <div class="container">
+                <h2>Decision Tree Regressor with Mean Absolute Error (MAE) Calculation</h2>
+                <p>
+                    This Python script uses a Decision Tree Regressor from the Scikit-learn library to predict house
+                    prices.
+                    It calculates the Mean Absolute Error (MAE) to evaluate the model's prediction accuracy and
+                    determines the best
+                    number of <code>max_leaf_nodes</code> based on the lowest MAE value.
+                </p>
+
+                <h3>Script Overview:</h3>
+                <p>This script does the following:</p>
+                <ul>
+                    <li>Reads a dataset from a CSV file containing house prices and features.</li>
+                    <li>Trains a Decision Tree Regressor using different values for <code>max_leaf_nodes</code>.</li>
+                    <li>Calculates the Mean Absolute Error (MAE) for each <code>max_leaf_nodes</code> value.</li>
+                    <li>Displays the best <code>max_leaf_nodes</code> value (i.e., the one that gives the lowest MAE).
+                    </li>
+                    <li>Allows you to manually check the MAE for a given <code>max_leaf_nodes</code> value.</li>
+                </ul>
+
+                <h3>Key Functionality</h3>
+                <ul>
+                    <li>
+                        <strong>max_mae(max_leaf_nodes, trainx, testx, trainy, testy):</strong> Trains the Decision Tree
+                        Regressor
+                        with the specified <code>max_leaf_nodes</code> and returns the MAE for that model.
+                    </li>
+                    <li>
+                        <strong>train_test_split:</strong> Splits the dataset into training and testing sets.
+                    </li>
+                    <li>
+                        <strong>Looping over max_leaf_nodes values:</strong> Trains the model for multiple values of
+                        <code>max_leaf_nodes</code> and calculates the MAE for each one.
+                    </li>
+                </ul>
+
+                <h3>Output</h3>
+                <p>The script outputs:</p>
+                <ul>
+                    <li>The MAE for each tested value of <code>max_leaf_nodes</code>.</li>
+                    <li>The minimum MAE and the corresponding best <code>max_leaf_nodes</code> value.</li>
+                    <li>The MAE for any user-selected <code>max_leaf_nodes</code> value within the testing range.</li>
+                </ul>
+
+                <p>
+                    For more details and to view the complete source code, please visit the project repository:
+                </p>
+                <p>
+                    <a href="https://github.com/tripathiji1312/ml-decision-tree-mae" target="_blank"
+                        class="project-link">View on GitHub</a>
+                </p>
+
+                <a href="../index.html#projects" class="btn">Back to Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" data-aos="fade-up">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Tripathiji. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS & Custom Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        AOS.init({ once: true, easing: 'ease-in-out' });
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
