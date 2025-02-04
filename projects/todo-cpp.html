@@ -5,15 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="description" content="TODO App project" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO App | Tripathiji Projects</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap"
+    <title>TODO App | Swarnim Projects</title>
+    <!-- Google Fonts: Orbitron for headings, Montserrat for body -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet" />
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <!-- AOS CSS for scroll animations -->
+    <!-- AOS CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <!-- Custom CSS (Shared stylesheet) -->
+    <!-- Shared CSS -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
         .project-content {
@@ -30,13 +31,13 @@
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.8rem;
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
 
         .project-content h3 {
             margin-top: 30px;
             margin-bottom: 10px;
-            color: var(--accent-color);
+            color: var(--primary-color);
             font-size: 1.8rem;
         }
 
@@ -52,7 +53,7 @@
         }
 
         .project-content code {
-            background: #f4f4f4;
+            background: var(--card-bg);
             padding: 2px 4px;
             border-radius: 3px;
             font-family: monospace;
@@ -68,8 +69,8 @@
 
         .project-btn {
             padding: 10px 20px;
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
             text-decoration: none;
             border-radius: 5px;
             font-size: 1rem;
@@ -78,42 +79,44 @@
         }
 
         .project-btn:hover {
-            background: var(--accent-color);
+            background: var(--primary-color);
             color: var(--bg-color);
         }
     </style>
 </head>
 
 <body>
-    <!-- Header (reuse same header as main site) -->
-    <header class="header">
-        <div class="container header-top">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-container">
             <div class="logo">
-                <a href="../index.html">tripathiji</a>
+                <a href="../index.html#hero">Swarnim</a>
             </div>
-            <nav class="nav-desktop">
+            <nav class="nav-main">
                 <ul>
                     <li><a href="../index.html#hero">Home</a></li>
                     <li><a href="../index.html#about">About</a></li>
-                    <li><a href="../index.html#tech">Tech</a></li>
+                    <li><a href="../index.html#skills">Skills</a></li>
                     <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="header-right">
-                <button id="themeToggle" aria-label="Toggle Theme">
-                    <span class="theme-icon material-icons">light_mode</span>
+            <div class="header-actions">
+                <button id="themeSwitcher" aria-label="Switch Theme">
+                    <span class="material-icons" id="themeIcon">wb_sunny</span>
                 </button>
-                <button class="hamburger" id="hamburger" aria-label="Open Menu">
+                <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
                     <span class="material-icons">menu</span>
                 </button>
             </div>
         </div>
-        <nav class="nav-mobile" id="navMobile">
+        <nav class="nav-mobile" id="mobileNav">
             <ul>
                 <li><a href="../index.html#hero" class="mobile-link">Home</a></li>
                 <li><a href="../index.html#about" class="mobile-link">About</a></li>
-                <li><a href="../index.html#tech" class="mobile-link">Tech</a></li>
+                <li><a href="../index.html#skills" class="mobile-link">Skills</a></li>
                 <li><a href="../index.html#projects" class="mobile-link">Projects</a></li>
+                <li><a href="../index.html#contact" class="mobile-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -124,26 +127,24 @@
             <div class="container">
                 <h2>TODO App</h2>
                 <p>This C++ project provides a simple command-line TODO list application to help you manage your daily
-                    tasks.</p>
-                <p>It allows you to add, view, and remove tasks using an intuitive interface.</p>
-
+                    tasks. It allows you to add, view, and remove tasks using an intuitive interface.</p>
                 <div class="project-buttons">
-                    <a href="projects/todo-cpp.html" class="btn project-btn">GitHub</a>
+                    <a href="https://github.com/tripathiji1312/todo-cpp" class="btn project-btn"
+                        target="_blank">GitHub</a>
                 </div>
-
                 <a href="../index.html#projects" class="btn">Back to Projects</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer (Compact) -->
-    <footer class="footer" data-aos="fade-up">
-        <div class="container">
+    <!-- Footer -->
+    <footer class="footer-section" data-aos="fade-up">
+        <div class="container footer-container">
             <p>&copy; <span id="year"></span> Swarnim Tripathi. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- AOS & Custom Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="../js/main.js"></script>
     <script>

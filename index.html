@@ -3,232 +3,242 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="description"
-    content="Tripathiji Portfolio – Backend Developer, Tech Enthusiast, and Digital Innovator." />
-  <meta name="keywords" content="Portfolio, Backend Developer, Tech, Projects" />
-  <meta name="author" content="Tripathiji" />
+  <meta name="description" content="Swarnim Tripathi Portfolio – A Tech Playground to Showcase Creative Code" />
+  <meta name="keywords" content="Portfolio, Backend Developer, Digital Innovator, Tech, Emojis" />
+  <meta name="author" content="Swarnim Tripathi" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coding the Future | Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap"
+  <title>Swarnim Tripathi</title>
+  <!-- Google Fonts: Orbitron for headings, Montserrat for body -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet" />
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <!-- AOS CSS for scroll animations -->
+  <!-- AOS CSS for scroll effects -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <!-- Favicon Links -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon_io/site.webmanifest">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- Custom Cursor (Desktop Only) -->
-  <div class="cursor-effect"></div>
-
-  <!-- Desktop Social Sidebar -->
-  <aside class="social-sidebar">
-    <a href="https://github.com/tripathiji1312" target="_blank" title="GitHub">
-      <img src="./assets/icons8-github-512.png" data-light="./assets/icons8-github-512.png"
-        data-dark="./assets/github-mark-white.svg" alt="GitHub" class="social-icon" />
-    </a>
-    <a href="https://www.instagram.com/swarnim.trip/" target="_blank" title="Instagram">
-      <img src="./assets/instagram.png" data-light="./assets/instagram.png" data-dark="./assets/instagram-white.png"
-        alt="Instagram" class="social-icon" />
-    </a>
-    <a href="https://www.linkedin.com/in/swarnim-tripathi-23a47431b/" target="_blank" title="LinkedIn">
-      <img src="./assets/linkedin.png" data-light="./assets/linkedin.png" data-dark="./assets/linkedin-white.png"
-        alt="LinkedIn" class="social-icon" />
-    </a>
-    <a href="mailto:swarnim.tr@gmail.com" target="_blank" title="Email">
-      <img src="./assets/email.png" data-light="./assets/email.png" data-dark="./assets/mail-white.png" alt="Email"
-        class="social-icon" />
-    </a>
-  </aside>
+  <!-- Custom Cursor (hidden on touch devices via CSS and JS) -->
+  <div class="custom-cursor"></div>
 
   <!-- Header -->
-  <header class="header">
-    <div class="container header-top">
+  <header class="main-header">
+    <div class="container header-container">
       <div class="logo">
-        <a href="#hero">tripathiji</a>
+        <a href="#hero">Swarnim</a>
       </div>
-      <nav class="nav-desktop">
+      <nav class="nav-main" aria-label="Main Navigation">
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#tech">Tech</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div class="header-right">
-        <button id="themeToggle" aria-label="Toggle Theme">
-          <span class="theme-icon material-icons">light_mode</span>
+      <div class="header-actions">
+        <button id="themeSwitcher" aria-label="Switch Theme" aria-pressed="false">
+          <span class="material-icons" id="themeIcon">wb_sunny</span>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Open Menu">
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
           <span class="material-icons">menu</span>
         </button>
       </div>
     </div>
     <!-- Mobile Navigation -->
-    <nav class="nav-mobile" id="navMobile">
+    <nav class="nav-mobile" id="mobileNav" aria-label="Mobile Navigation">
       <ul>
         <li><a href="#hero" class="mobile-link">Home</a></li>
         <li><a href="#about" class="mobile-link">About</a></li>
-        <li><a href="#tech" class="mobile-link">Tech</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
         <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero fullpage" id="hero">
-    <div class="hero-bg"></div>
-    <div class="container hero-content" data-aos="fade-up">
-      <h1 data-aos="zoom-in" data-aos-delay="300">Coding the Future</h1>
-      <p class="subheading" data-aos="fade-up" data-aos-delay="500">
-        Backend Developer • Tech Enthusiast • Digital Innovator
-      </p>
-      <p class="intro" data-aos="fade-up" data-aos-delay="700">
-        I transform complex challenges into innovative digital solutions.
-      </p>
-      <a href="#projects" class="btn" data-aos="fade-up" data-aos-delay="900">Explore My Projects</a>
-    </div>
-    <!-- Mobile Social Icons -->
-    <div class="hero-social">
-      <a href="https://github.com/tripathiji1312" target="_blank" title="GitHub">
-        <img src="./assets/github-mark.svg" data-light="./assets/github-mark.svg"
-          data-dark="./assets/github-mark-white.svg" alt="GitHub" class="social-icon" />
-      </a>
-      <a href="https://www.instagram.com/swarnim.trip/" target="_blank" title="Instagram">
-        <img src="./assets/instagram.png" data-light="./assets/instagram.png" data-dark="./assets/instagram-white.png"
-          alt="Instagram" class="social-icon" />
-      </a>
-      <a href="https://www.linkedin.com/in/swarnim-tripathi-23a47431b/" target="_blank" title="LinkedIn">
-        <img src="./assets/linkedin.png" data-light="./assets/linkedin.png" data-dark="./assets/linkedin-white.png"
-          alt="LinkedIn" class="social-icon" />
-      </a>
-      <a href="mailto:swarnim.tr@gmail.com" target="_blank" title="Email">
-        <img src="./assets/email.png" data-light="./assets/email.png" data-dark="./assets/mail-white.png" alt="Email"
-          class="social-icon" />
-      </a>
-    </div>
-  </section>
-
-  <!-- ABOUT ME SECTION -->
-  <section id="about" class="section about fullpage" data-aos="fade-up">
-    <div class="container">
-      <h2 data-aos="fade-down" data-aos-duration="800">About Me</h2>
-      <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-        <div class="about-image">
-          <!-- Adjusted dimensions on mobile are controlled in CSS -->
-          <img src="assets/profile.jpg" alt="Profile picture" />
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="neon-grid"></div>
+      <div class="container hero-wrapper">
+        <!-- Hero Text -->
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+          <h1>🚀 Hi, I'm Swarnim</h1>
+          <p>I craft innovative code and digital experiences.</p>
+          <a href="#projects" class="btn primary-btn" data-aos="zoom-in" data-aos-delay="400">
+            View Work 💼
+          </a>
         </div>
-        <div class="about-text">
-          <p>Hello, I'm <strong>Swarnim Tripathi</strong> – a creative backend developer and digital innovator who seamlessly
-            blends technology with art. I believe that elegant code and thoughtful design combine to create
-            extraordinary digital experiences.</p>
-          <p>My passion is building robust systems and exploring cutting-edge tech trends. I focus on crafting solutions
-            that are both powerful and visually captivating. Let's shape the future together!</p>
+        <!-- Hero Image -->
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+          <img src="assets/profile.jpg" alt="Swarnim Tripathi" loading="lazy" />
         </div>
       </div>
-    </div>
-  </section>
+      <!-- Social Icons -->
+      <div class="hero-social">
+        <a href="https://github.com/tripathiji1312" target="_blank" title="GitHub 🤖">
+          <img src="assets/github-mark.svg" data-light="assets/icons8-github-512.png"
+            data-dark="assets/github-mark-white.svg" alt="GitHub" class="social-icon" loading="lazy" />
+        </a>
+        <a href="https://www.instagram.com/swarnim.trip/" target="_blank" title="Instagram 📸">
+          <img src="assets/instagram.png" data-light="assets/instagram.png" data-dark="assets/instagram-white.png"
+            alt="Instagram" class="social-icon" loading="lazy" />
+        </a>
+        <a href="https://www.linkedin.com/in/swarnim-tripathi-23a47431b/" target="_blank" title="LinkedIn 💼">
+          <img src="assets/linkedin.png" data-light="assets/linkedin.png" data-dark="assets/linkedin-white.png"
+            alt="LinkedIn" class="social-icon" loading="lazy" />
+        </a>
+        <a href="mailto:swarnim.tr@gmail.com" target="_blank" title="Email 📧">
+          <img src="assets/email.png" data-light="assets/email.png" data-dark="assets/mail-white.png" alt="Email"
+            class="social-icon" loading="lazy" />
+        </a>
+      </div>
+    </section>
 
-  <!-- TECH STACK SECTION -->
-  <section id="tech" class="section fullpage" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Tech Stack</h2>
-      <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
-        <div class="tech-item" data-aos="flip-left">
-          <img src="assets/python.png" alt="Python Logo" />
-          <p>Python</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="100">
-          <img src="assets/c-.png" alt="C++ Logo" />
-          <p>C++</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="200">
-          <img src="assets/letter-c.png" alt="C Logo" />
-          <p>C</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="300">
-          <img src="assets/kotlin-original.svg" alt="Kotlin Logo" />
-          <p>Kotlin</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="400">
-          <img src="assets/rust-new.svg" alt="Rust Logo" />
-          <p>Rust</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="500">
-          <img src="assets/git.svg" alt="Git Logo" />
-          <p>Git</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="600">
-          <img src="assets/linux.png" alt="Linux Logo" />
-          <p>Linux</p>
-        </div>
-        <div class="tech-item" data-aos="flip-left" data-aos-delay="700">
-          <img src="assets/api.png" alt="APIs Icon" />
-          <p>APIs</p>
+    <!-- About Section -->
+    <section id="about" class="about-section" data-aos="fade-up">
+      <div class="container section-container">
+        <h2 class="section-title" data-aos="fade-down">About Me 🤓</h2>
+        <p class="section-description">
+          I merge technology with creativity to build innovative backend solutions and digital experiences that stand
+          out.
+          Let’s innovate together! 🔧💡
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section" data-aos="fade-up">
+      <div class="container section-container">
+        <h2 class="section-title" data-aos="fade-down">My Skills 🛠️</h2>
+        <div class="skills-grid">
+          <div class="skill-card" data-aos="flip-left">
+            <img src="assets/python.png" alt="Python" loading="lazy" />
+            <p>Python</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="100">
+            <img src="assets/c-.png" alt="C++" loading="lazy" />
+            <p>C++</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="200">
+            <img src="assets/letter-c.png" alt="C" loading="lazy" />
+            <p>C</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="300">
+            <img src="assets/kotlin-original.svg" alt="Kotlin" loading="lazy" />
+            <p>Kotlin</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="400">
+            <img src="assets/rust-new.svg" alt="Rust" loading="lazy" />
+            <p>Rust</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="500">
+            <img src="assets/git.svg" alt="Git" loading="lazy" />
+            <p>Git</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="600">
+            <img src="assets/linux.png" alt="Linux" loading="lazy" />
+            <p>Linux</p>
+          </div>
+          <div class="skill-card" data-aos="flip-left" data-aos-delay="700">
+            <img src="assets/api.png" alt="APIs" loading="lazy" />
+            <p>APIs</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS SECTION -->
-  <section id="projects" class="section fullpage" data-aos="fade-up">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Projects</h2>
-      <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
-        <article class="project-card" data-aos="zoom-in">
-          <h3>ml-decision-tree-mae</h3>
-          <p>A machine learning decision tree implementation in Python.</p>
-          <div class="project-buttons">
-            <a href="projects/ml-decision-tree-mae.html" class="btn project-btn">Details</a>
-            <a href="https://github.com/tripathiji1312/ml-decision-tree-mae" class="btn project-btn"
-              target="_blank">GitHub</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="zoom-in" data-aos-delay="100">
-          <h3>expense-tracker</h3>
-          <p>A Python-based expense tracking application.</p>
-          <div class="project-buttons">
-            <a href="projects/expense-tracker.html" class="btn project-btn">Details</a>
-            <a href="https://github.com/tripathiji1312/expense-tracker" class="btn project-btn"
-              target="_blank">GitHub</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="zoom-in" data-aos-delay="200">
-          <h3>password-manager</h3>
-          <p>A secure password manager built with Python.</p>
-          <div class="project-buttons">
-            <a href="projects/password-manager.html" class="btn project-btn">Details</a>
-            <a href="https://github.com/tripathiji1312/password-manager" class="btn project-btn"
-              target="_blank">GitHub</a>
-          </div>
-        </article>
-        <article class="project-card" data-aos="zoom-in" data-aos-delay="300">
-          <h3>todo-cpp</h3>
-          <p>A simple to-do list application implemented in C++.</p>
-          <div class="project-buttons">
-            <a href="projects/todo-cpp.html" class="btn project-btn">Details</a>
-            <a href="https://github.com/tripathiji1312/todo-cpp" class="btn project-btn" target="_blank">GitHub</a>
-          </div>
-        </article>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section" data-aos="fade-up">
+      <div class="container section-container">
+        <h2 class="section-title" data-aos="fade-down">Projects 💻</h2>
+        <div class="projects-grid">
+          <article class="project-card" data-aos="zoom-in">
+            <h3>ML Decision Tree</h3>
+            <p>
+              A futuristic machine learning decision tree that predicts house prices using advanced metrics.
+            </p>
+            <div class="card-buttons">
+              <a href="projects/ml-decision-tree-mae.html" class="btn secondary-btn">Details 🔍</a>
+              <a href="https://github.com/tripathiji1312/ml-decision-tree-mae" class="btn secondary-btn"
+                target="_blank">GitHub 💻</a>
+            </div>
+          </article>
+          <article class="project-card" data-aos="zoom-in" data-aos-delay="100">
+            <h3>Expense Tracker</h3>
+            <p>
+              A command-line financial tracker designed to simplify budgeting and expense management.
+            </p>
+            <div class="card-buttons">
+              <a href="projects/expense-tracker.html" class="btn secondary-btn">Details 🔍</a>
+              <a href="https://github.com/tripathiji1312/expense-tracker" class="btn secondary-btn"
+                target="_blank">GitHub 💻</a>
+            </div>
+          </article>
+          <article class="project-card" data-aos="zoom-in" data-aos-delay="200">
+            <h3>Password Manager</h3>
+            <p>
+              A state-of-the-art encrypted vault to keep your digital life secure.
+            </p>
+            <div class="card-buttons">
+              <a href="projects/password-manager.html" class="btn secondary-btn">Details 🔍</a>
+              <a href="https://github.com/tripathiji1312/password-manager" class="btn secondary-btn"
+                target="_blank">GitHub 💻</a>
+            </div>
+          </article>
+          <article class="project-card" data-aos="zoom-in" data-aos-delay="300">
+            <h3>Todo CLI</h3>
+            <p>
+              A powerful C++ command-line task manager engineered for efficiency.
+            </p>
+            <div class="card-buttons">
+              <a href="projects/todo-cpp.html" class="btn secondary-btn">Details 🔍</a>
+              <a href="https://github.com/tripathiji1312/todo-cpp" class="btn secondary-btn" target="_blank">GitHub
+                💻</a>
+            </div>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER SECTION (Compact) -->
-  <footer class="footer" data-aos="fade-up">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Swarnim Tripathi. All Rights Reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section" data-aos="fade-up">
+      <div class="container section-container">
+        <h2 class="section-title" data-aos="fade-down">Let's Chat! 💬</h2>
+        <p class="section-description">
+          Ready to collaborate? Get in touch and let’s build something amazing together.
+        </p>
+        <a href="mailto:swarnim.tr@gmail.com" class="btn primary-btn">Contact Me 📧</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-section" data-aos="fade-up">
+    <div class="container footer-container">
+      <p>&copy; <span id="currentYear"></span> Swarnim Tripathi. All Rights Reserved. ⚡</p>
     </div>
   </footer>
 
   <!-- AOS & Custom Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <!-- Initialize AOS and set the current year as soon as the DOM is ready -->
   <script>
-    AOS.init({ once: true, easing: 'ease-in-out' });
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ once: true, easing: 'ease-in-out' });
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
   </script>
 </body>
 
