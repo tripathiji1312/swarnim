@@ -27,8 +27,8 @@
     updateSocialIcons(mode);
   }
 
-  // Retrieve saved theme or default to light
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  // Retrieve saved theme or default to dark (now dark mode is default)
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   setTheme(savedTheme);
 
   if (themeSwitcher) {
