@@ -21,26 +21,30 @@
 </head>
 
 <body>
-  <!-- Animated Cursor Effect Element -->
+  <!-- Custom Cursor (Desktop Only) -->
   <div class="cursor-effect"></div>
 
-  <!-- Vertical Social Sidebar -->
+  <!-- Desktop Social Sidebar -->
   <aside class="social-sidebar">
     <a href="https://github.com/tripathiji1312" target="_blank" title="GitHub">
-      <img src="assets/github-mark.svg" alt="GitHub" class="social-icon" />
+      <img src="./assets/icons8-github-512.png" data-light="./assets/icons8-github-512.png"
+        data-dark="./assets/github-mark-white.svg" alt="GitHub" class="social-icon" />
     </a>
     <a href="https://www.instagram.com/swarnim.trip/" target="_blank" title="Instagram">
-      <img src="assets/instagram.png" alt="Instagram" class="social-icon" />
+      <img src="./assets/instagram.png" data-light="./assets/instagram.png" data-dark="./assets/instagram-white.png"
+        alt="Instagram" class="social-icon" />
     </a>
     <a href="https://www.linkedin.com/in/swarnim-tripathi-23a47431b/" target="_blank" title="LinkedIn">
-      <img src="assets/linkedin.png" alt="LinkedIn" class="social-icon" />
+      <img src="./assets/linkedin.png" data-light="./assets/linkedin.png" data-dark="./assets/linkedin-white.png"
+        alt="LinkedIn" class="social-icon" />
     </a>
     <a href="mailto:swarnim.tr@gmail.com" target="_blank" title="Email">
-      <img src="assets/email.png" alt="Email" class="social-icon" />
+      <img src="./assets/email.png" data-light="./assets/email.png" data-dark="./assets/mail-white.png" alt="Email"
+        class="social-icon" />
     </a>
   </aside>
 
-  <!-- Header with Navigation -->
+  <!-- Header -->
   <header class="header">
     <div class="container header-top">
       <div class="logo">
@@ -74,8 +78,8 @@
     </nav>
   </header>
 
-  <!-- Hero Section with Animated Gradient Background -->
-  <section class="hero" id="hero">
+  <!-- HERO SECTION -->
+  <section class="hero fullpage" id="hero">
     <div class="hero-bg"></div>
     <div class="container hero-content" data-aos="fade-up">
       <h1 data-aos="zoom-in" data-aos-delay="300">Coding the Future</h1>
@@ -87,98 +91,133 @@
       </p>
       <a href="#projects" class="btn" data-aos="fade-up" data-aos-delay="900">Explore My Projects</a>
     </div>
+    <!-- Mobile Social Icons -->
+    <div class="hero-social">
+      <a href="https://github.com/tripathiji1312" target="_blank" title="GitHub">
+        <img src="./assets/github-mark.svg" data-light="./assets/github-mark.svg"
+          data-dark="./assets/github-mark-white.svg" alt="GitHub" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/swarnim.trip/" target="_blank" title="Instagram">
+        <img src="./assets/instagram.png" data-light="./assets/instagram.png" data-dark="./assets/instagram-white.png"
+          alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.linkedin.com/in/swarnim-tripathi-23a47431b/" target="_blank" title="LinkedIn">
+        <img src="./assets/linkedin.png" data-light="./assets/linkedin.png" data-dark="./assets/linkedin-white.png"
+          alt="LinkedIn" class="social-icon" />
+      </a>
+      <a href="mailto:swarnim.tr@gmail.com" target="_blank" title="Email">
+        <img src="./assets/email.png" data-light="./assets/email.png" data-dark="./assets/mail-white.png" alt="Email"
+          class="social-icon" />
+      </a>
+    </div>
   </section>
 
-  <!-- Main Content -->
-  <main>
-    <!-- About Section -->
-    <section id="about" class="section about" data-aos="fade-up">
-      <div class="container">
-        <h2>About Me</h2>
-        <div class="about-card">
-          <img src="assets/profile.jpg" alt="Profile picture of Tripathiji" class="about-img" />
-          <div class="about-text">
-            <p>
-              I'm a creative developer passionate about building robust backend solutions and exploring cutting-edge
-              technology. I aim to push digital innovation forward with every project.
-            </p>
-          </div>
+  <!-- ABOUT ME SECTION -->
+  <section id="about" class="section about fullpage" data-aos="fade-up">
+    <div class="container">
+      <h2 data-aos="fade-down" data-aos-duration="800">About Me</h2>
+      <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-image">
+          <!-- Adjusted dimensions on mobile are controlled in CSS -->
+          <img src="assets/profile.jpg" alt="Profile picture" />
+        </div>
+        <div class="about-text">
+          <p>Hello, I'm <strong>Swarnim Tripathi</strong> – a creative backend developer and digital innovator who seamlessly
+            blends technology with art. I believe that elegant code and thoughtful design combine to create
+            extraordinary digital experiences.</p>
+          <p>My passion is building robust systems and exploring cutting-edge tech trends. I focus on crafting solutions
+            that are both powerful and visually captivating. Let's shape the future together!</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Tech Stack Section -->
-    <section id="tech" class="section" data-aos="fade-up">
-      <div class="container">
-        <h2>Tech Stack</h2>
-        <div class="tech-grid">
-          <div class="tech-item" data-aos="flip-left">
-            <img src="assets/python.png" alt="Python Logo" />
-            <p>Python</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="100">
-            <img src="assets/c-.png" alt="C++ Logo" />
-            <p>C++</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="200">
-            <img src="assets/letter-c.png" alt="C Logo" />
-            <p>C</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="300">
-            <img src="assets/kotlin-original.svg" alt="Kotlin Logo" />
-            <p>Kotlin</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="400">
-            <img src="assets/rust-new.svg" alt="Rust Logo" />
-            <p>Rust</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="500">
-            <img src="assets/git.svg" alt="Git Logo" />
-            <p>Git</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="600">
-            <img src="assets/linux.png" alt="Linux Logo" />
-            <p>Linux</p>
-          </div>
-          <div class="tech-item" data-aos="flip-left" data-aos-delay="700">
-            <img src="assets/api.png" alt="APIs Icon" />
-            <p>APIs</p>
-          </div>
+  <!-- TECH STACK SECTION -->
+  <section id="tech" class="section fullpage" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Tech Stack</h2>
+      <div class="tech-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="tech-item" data-aos="flip-left">
+          <img src="assets/python.png" alt="Python Logo" />
+          <p>Python</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="100">
+          <img src="assets/c-.png" alt="C++ Logo" />
+          <p>C++</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="200">
+          <img src="assets/letter-c.png" alt="C Logo" />
+          <p>C</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="300">
+          <img src="assets/kotlin-original.svg" alt="Kotlin Logo" />
+          <p>Kotlin</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="400">
+          <img src="assets/rust-new.svg" alt="Rust Logo" />
+          <p>Rust</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="500">
+          <img src="assets/git.svg" alt="Git Logo" />
+          <p>Git</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="600">
+          <img src="assets/linux.png" alt="Linux Logo" />
+          <p>Linux</p>
+        </div>
+        <div class="tech-item" data-aos="flip-left" data-aos-delay="700">
+          <img src="assets/api.png" alt="APIs Icon" />
+          <p>APIs</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects" data-aos="fade-up">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <article class="project-card" data-aos="zoom-in">
-            <h3>ml-decision-tree-mae</h3>
-            <p>A machine learning decision tree implementation in Python.</p>
-            <a href="projects/ml-decision-tree-mae.html" class="project-link">Learn More</a>
-          </article>
-          <article class="project-card" data-aos="zoom-in" data-aos-delay="100">
-            <h3>expense-tracker</h3>
-            <p>A Python-based expense tracking application.</p>
-            <a href="projects/expense-tracker.html" class="project-link">Learn More</a>
-          </article>
-          <article class="project-card" data-aos="zoom-in" data-aos-delay="200">
-            <h3>password-manager</h3>
-            <p>A secure password manager built with Python.</p>
-            <a href="projects/password-manager.html" class="project-link">Learn More</a>
-          </article>
-          <article class="project-card" data-aos="zoom-in" data-aos-delay="300">
-            <h3>todo-cpp</h3>
-            <p>A simple to-do list application implemented in C++.</p>
-            <a href="projects/todo-cpp.html" class="project-link">Learn More</a>
-          </article>
-        </div>
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section fullpage" data-aos="fade-up">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-down" data-aos-duration="800">Projects</h2>
+      <div class="projects-grid" data-aos="fade-up" data-aos-delay="200">
+        <article class="project-card" data-aos="zoom-in">
+          <h3>ml-decision-tree-mae</h3>
+          <p>A machine learning decision tree implementation in Python.</p>
+          <div class="project-buttons">
+            <a href="projects/ml-decision-tree-mae.html" class="btn project-btn">Details</a>
+            <a href="https://github.com/tripathiji1312/ml-decision-tree-mae" class="btn project-btn"
+              target="_blank">GitHub</a>
+          </div>
+        </article>
+        <article class="project-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>expense-tracker</h3>
+          <p>A Python-based expense tracking application.</p>
+          <div class="project-buttons">
+            <a href="projects/expense-tracker.html" class="btn project-btn">Details</a>
+            <a href="https://github.com/tripathiji1312/expense-tracker" class="btn project-btn"
+              target="_blank">GitHub</a>
+          </div>
+        </article>
+        <article class="project-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>password-manager</h3>
+          <p>A secure password manager built with Python.</p>
+          <div class="project-buttons">
+            <a href="projects/password-manager.html" class="btn project-btn">Details</a>
+            <a href="https://github.com/tripathiji1312/password-manager" class="btn project-btn"
+              target="_blank">GitHub</a>
+          </div>
+        </article>
+        <article class="project-card" data-aos="zoom-in" data-aos-delay="300">
+          <h3>todo-cpp</h3>
+          <p>A simple to-do list application implemented in C++.</p>
+          <div class="project-buttons">
+            <a href="projects/todo-cpp.html" class="btn project-btn">Details</a>
+            <a href="https://github.com/tripathiji1312/todo-cpp" class="btn project-btn" target="_blank">GitHub</a>
+          </div>
+        </article>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Footer -->
+  <!-- FOOTER SECTION (Compact) -->
   <footer class="footer" data-aos="fade-up">
     <div class="container">
       <p>&copy; <span id="year"></span> Swarnim Tripathi. All Rights Reserved.</p>

@@ -6,7 +6,7 @@
     <meta name="description"
         content="Decision Tree Regressor with Mean Absolute Error (MAE) Calculation for ml-decision-tree-mae project" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Decision Tree Regressor with Mean Absolute Error (MAE) Calculation | Tripathiji Projects</title>
+    <title>Decision Tree Regressor | Tripathiji Projects</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&display=swap"
         rel="stylesheet" />
@@ -14,21 +14,32 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- AOS CSS for scroll animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <!-- Custom CSS (reuse same stylesheet for consistency) -->
+    <!-- Custom CSS (Shared stylesheet) -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-        /* Optional extra styles for the project page */
+        /* Project page-specific adjustments */
+        .project-content {
+            max-width: 900px;
+            margin: 80px auto;
+            text-align: left;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
         .project-content h2 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            color: var(--accent-color);
             text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            color: var(--accent-color);
         }
 
         .project-content h3 {
             margin-top: 30px;
             margin-bottom: 10px;
             color: var(--accent-color);
+            font-size: 1.8rem;
         }
 
         .project-content p,
@@ -48,11 +59,35 @@
             border-radius: 3px;
             font-family: monospace;
         }
+
+        .project-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .project-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
     </style>
 </head>
 
 <body>
-    <!-- Header (reuse same header as index.html) -->
+    <!-- Header (same as main site) -->
     <header class="header">
         <div class="container header-top">
             <div class="logo">
@@ -75,7 +110,6 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Navigation -->
         <nav class="nav-mobile" id="navMobile">
             <ul>
                 <li><a href="../index.html#hero" class="mobile-link">Home</a></li>
@@ -90,64 +124,39 @@
     <main>
         <section class="section project-content" data-aos="fade-up">
             <div class="container">
-                <h2>Decision Tree Regressor with Mean Absolute Error (MAE) Calculation</h2>
-                <p>
-                    This Python script uses a Decision Tree Regressor from the Scikit-learn library to predict house
-                    prices.
-                    It calculates the Mean Absolute Error (MAE) to evaluate the model's prediction accuracy and
-                    determines the best
-                    number of <code>max_leaf_nodes</code> based on the lowest MAE value.
-                </p>
+                <h2>Decision Tree Regressor with MAE</h2>
+                <p>This project uses Scikit-learn’s Decision Tree Regressor to predict house prices and calculates the
+                    Mean Absolute Error (MAE) to evaluate model performance. The script tests multiple
+                    <code>max_leaf_nodes</code> values and identifies the optimal number for the best prediction
+                    accuracy.</p>
 
-                <h3>Script Overview:</h3>
-                <p>This script does the following:</p>
+                <h3>Overview</h3>
                 <ul>
                     <li>Reads a dataset from a CSV file containing house prices and features.</li>
-                    <li>Trains a Decision Tree Regressor using different values for <code>max_leaf_nodes</code>.</li>
-                    <li>Calculates the Mean Absolute Error (MAE) for each <code>max_leaf_nodes</code> value.</li>
-                    <li>Displays the best <code>max_leaf_nodes</code> value (i.e., the one that gives the lowest MAE).
-                    </li>
-                    <li>Allows you to manually check the MAE for a given <code>max_leaf_nodes</code> value.</li>
+                    <li>Trains a Decision Tree Regressor with varying <code>max_leaf_nodes</code>.</li>
+                    <li>Calculates the MAE for each model and identifies the best value.</li>
                 </ul>
 
                 <h3>Key Functionality</h3>
                 <ul>
-                    <li>
-                        <strong>max_mae(max_leaf_nodes, trainx, testx, trainy, testy):</strong> Trains the Decision Tree
-                        Regressor
-                        with the specified <code>max_leaf_nodes</code> and returns the MAE for that model.
-                    </li>
-                    <li>
-                        <strong>train_test_split:</strong> Splits the dataset into training and testing sets.
-                    </li>
-                    <li>
-                        <strong>Looping over max_leaf_nodes values:</strong> Trains the model for multiple values of
-                        <code>max_leaf_nodes</code> and calculates the MAE for each one.
+                    <li><strong>max_mae():</strong> Trains the model with a given <code>max_leaf_nodes</code> value and
+                        returns the MAE.</li>
+                    <li>Splits the data into training and testing sets using <code>train_test_split</code>.</li>
+                    <li>Loops over several <code>max_leaf_nodes</code> values to find the optimal model configuration.
                     </li>
                 </ul>
 
-                <h3>Output</h3>
-                <p>The script outputs:</p>
-                <ul>
-                    <li>The MAE for each tested value of <code>max_leaf_nodes</code>.</li>
-                    <li>The minimum MAE and the corresponding best <code>max_leaf_nodes</code> value.</li>
-                    <li>The MAE for any user-selected <code>max_leaf_nodes</code> value within the testing range.</li>
-                </ul>
-
-                <p>
-                    For more details and to view the complete source code, please visit the project repository:
-                </p>
-                <p>
-                    <a href="https://github.com/tripathiji1312/ml-decision-tree-mae" target="_blank"
-                        class="project-link">View on GitHub</a>
-                </p>
+                <div class="project-buttons">
+                    <a href="https://github.com/tripathiji1312/ml-decision-tree-mae" class="btn project-btn"
+                        target="_blank">GitHub</a>
+                </div>
 
                 <a href="../index.html#projects" class="btn">Back to Projects</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Compact) -->
     <footer class="footer" data-aos="fade-up">
         <div class="container">
             <p>&copy; <span id="year"></span> Swarnim Tripathi. All Rights Reserved.</p>

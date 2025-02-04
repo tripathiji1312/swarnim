@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description"
-        content="TODO app" />
+    <meta name="description" content="TODO App project" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO App | Tripathiji Projects</title>
     <!-- Google Fonts -->
@@ -14,21 +13,31 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- AOS CSS for scroll animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <!-- Custom CSS (reuse same stylesheet for consistency) -->
+    <!-- Custom CSS (Shared stylesheet) -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-        /* Optional extra styles for the project page */
+        .project-content {
+            max-width: 900px;
+            margin: 80px auto;
+            text-align: left;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
         .project-content h2 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            color: var(--accent-color);
             text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            color: var(--accent-color);
         }
 
         .project-content h3 {
             margin-top: 30px;
             margin-bottom: 10px;
             color: var(--accent-color);
+            font-size: 1.8rem;
         }
 
         .project-content p,
@@ -48,11 +57,35 @@
             border-radius: 3px;
             font-family: monospace;
         }
+
+        .project-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .project-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
     </style>
 </head>
 
 <body>
-    <!-- Header (reuse same header as index.html) -->
+    <!-- Header (reuse same header as main site) -->
     <header class="header">
         <div class="container header-top">
             <div class="logo">
@@ -75,7 +108,6 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Navigation -->
         <nav class="nav-mobile" id="navMobile">
             <ul>
                 <li><a href="../index.html#hero" class="mobile-link">Home</a></li>
@@ -91,24 +123,20 @@
         <section class="section project-content" data-aos="fade-up">
             <div class="container">
                 <h2>TODO App</h2>
-                <p>
-                    This will help u manage and make todo list :)
-                </p>
+                <p>This C++ project provides a simple command-line TODO list application to help you manage your daily
+                    tasks.</p>
+                <p>It allows you to add, view, and remove tasks using an intuitive interface.</p>
 
-                <p>
-                    For more details and to view the complete source code, please visit the project repository:
-                </p>
-                <p>
-                    <a href="https://github.com/tripathiji1312/todo-cpp" target="_blank"
-                        class="project-link">View on GitHub</a>
-                </p>
+                <div class="project-buttons">
+                    <a href="projects/todo-cpp.html" class="btn project-btn">GitHub</a>
+                </div>
 
                 <a href="../index.html#projects" class="btn">Back to Projects</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Compact) -->
     <footer class="footer" data-aos="fade-up">
         <div class="container">
             <p>&copy; <span id="year"></span> Swarnim Tripathi. All Rights Reserved.</p>

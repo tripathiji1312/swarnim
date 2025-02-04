@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="description"
-        content="Expense Manager" />
+    <meta name="description" content="Expense Manager project" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Manager | Tripathiji Projects</title>
     <!-- Google Fonts -->
@@ -14,21 +13,31 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- AOS CSS for scroll animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <!-- Custom CSS (reuse same stylesheet for consistency) -->
+    <!-- Custom CSS (Shared stylesheet) -->
     <link rel="stylesheet" href="../css/style.css" />
     <style>
-        /* Optional extra styles for the project page */
+        .project-content {
+            max-width: 900px;
+            margin: 80px auto;
+            text-align: left;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
         .project-content h2 {
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            color: var(--accent-color);
             text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            color: var(--accent-color);
         }
 
         .project-content h3 {
             margin-top: 30px;
             margin-bottom: 10px;
             color: var(--accent-color);
+            font-size: 1.8rem;
         }
 
         .project-content p,
@@ -48,11 +57,35 @@
             border-radius: 3px;
             font-family: monospace;
         }
+
+        .project-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-btn {
+            padding: 10px 20px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .project-btn:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
     </style>
 </head>
 
 <body>
-    <!-- Header (reuse same header as index.html) -->
+    <!-- Header (same as main site) -->
     <header class="header">
         <div class="container header-top">
             <div class="logo">
@@ -75,7 +108,6 @@
                 </button>
             </div>
         </div>
-        <!-- Mobile Navigation -->
         <nav class="nav-mobile" id="navMobile">
             <ul>
                 <li><a href="../index.html#hero" class="mobile-link">Home</a></li>
@@ -91,166 +123,29 @@
         <section class="section project-content" data-aos="fade-up">
             <div class="container">
                 <h2>Expense Manager</h2>
-
-                <p>This project is a command-line based Expense Manager written in Python. It allows users to register, log in, manage expenses, and update their income. User passwords are encrypted and stored securely.</p>
+                <p>This project is a command-line based Expense Manager written in Python. It allows users to register,
+                    log in, manage expenses, and update their income. Passwords are securely encrypted and stored.</p>
 
                 <h3>Features</h3>
                 <ul>
-                    <li><strong>User Registration and Login:</strong> Securely register and log in users with encrypted passwords.</li>
-                    <li><strong>Add Expense:</strong> Add new expenses to the user's expense record.</li>
-                    <li><strong>Show Expense:</strong> Display all expenses recorded by the user.</li>
-                    <li><strong>Update Income:</strong> Update the user's income/salary information.</li>
-                    <li><strong>Show Income:</strong> Display the current income/salary of the user.</li>
-                    <li><strong>Show Report:</strong> Generate a report of the user's income and expenses.</li>
+                    <li><strong>User Registration & Login:</strong> Securely register and log in with encrypted
+                        passwords.</li>
+                    <li><strong>Add Expense:</strong> Record new expenses effortlessly.</li>
+                    <li><strong>View Expenses:</strong> Display a complete list of your expenses.</li>
+                    <li><strong>Update Income:</strong> Modify your income details.</li>
+                    <li><strong>Generate Report:</strong> Get a detailed report of your finances.</li>
                 </ul>
 
-                <h3>Setup</h3>
-                <ol>
-                    <li><strong>Clone the Repository:</strong>
-                        <pre><code>git clone https://github.com/tripathiji1312/expense-tracker.git</code></pre>
-                    </li>
-                    <li><strong>Install Dependencies:</strong>
-                        <p>Ensure you have Python installed (version 3.6 or higher). This project uses standard Python libraries, so no additional dependencies are required.</p>
-                    </li>
-                    <li><strong>Create Required CSV Files:</strong>
-                        <p>Create <code>users.csv</code> and <code>auth.csv</code> files in the project directory.</p>
-                        <p><strong>users.csv</strong></p>
-                        <pre><code>username,password,salary</code></pre>
-                        <p><strong>auth.csv</strong></p>
-                        <pre><code>A,H
-B,i
-C,e
-D,$
-E,1
-F,0
-G,f
-H,Q
-I,A
-J,w
-K,v
-L,j
-M,Z
-N,>
-O,S
-P,)
-Q,E
-R,L
-S,J
-T,F
-U,C
-V,2
-W,O
-X,B
-Y,I
-Z,D
-a,z
-b,s
-c,9
-d,7
-e,+
-f,x
-g,&
-h,@
-i,a
-j,{
-k,V
-l,<
-m,n
-n,N
-o,4
-p,(
-q,#
-r,P
-s,m
-t,|
-u,?
-v,[
-w,W
-x,`
-y,o
-z,:
-0,_
-1,b
-2,;
-3,K
-4,*
-5,t
-6,l
-7,]
-8,U
-9,d
-!,.
-@,5
-#,k
-$,!
-%,p
-^,g
-&,X
-*,3
-(^
-),r
--,T
-_,u
-=,8
-+,/
-[,c
-],Y
-{,~
-},h
-|,6
-;,q
-:,R
-.,%
-/,G
-<,}
->,-
-?,=
-`,y
-~,M</code></pre>
-                    </li>
-                </ol>
+                <div class="project-buttons">
+                    <a href="projects/expense-tracker.html" class="btn project-btn">GitHub</a>
+                </div>
 
-                <h3>Usage</h3>
-                <p>Run the script to start the Expense Manager:</p>
-                <pre><code>python main.py</code></pre>
-
-                <h3>Register a New User</h3>
-                <ol>
-                    <li>When prompted, enter your username.</li>
-                    <li>If you are a new user, create a password and enter your salary.</li>
-                </ol>
-
-                <h3>Login as an Existing User</h3>
-                <ol>
-                    <li>When prompted, enter your username.</li>
-                    <li>If you are an existing user, enter your password to log in.</li>
-                </ol>
-
-                <h3>Manage Expenses and Income</h3>
-                <p>Once logged in, follow the on-screen menu to add expenses, show expenses, update income, show income, or exit the program.</p>
-
-                <h3>File Structure</h3>
-                <pre><code>expense-manager/
-├── auth.py
-├── expense.py
-├── income.py
-├── main.py
-├── auth.csv
-├── users.csv
-└── README.md</code></pre>
-                    <p>
-                        For more details and to view the complete source code, please visit the project repository:
-                    </p>
-                    <p>
-                        <a href="https://github.com/tripathiji1312/expense-tracker" target="_blank" class="project-link">View on
-                            GitHub</a>
-                    </p>
                 <a href="../index.html#projects" class="btn">Back to Projects</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Compact) -->
     <footer class="footer" data-aos="fade-up">
         <div class="container">
             <p>&copy; <span id="year"></span> Swarnim Tripathi. All Rights Reserved.</p>
