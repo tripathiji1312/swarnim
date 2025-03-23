@@ -1,89 +1,149 @@
-(function() {
-  // Theme toggling code
-  const themeSwitcher = document.getElementById('themeSwitcher');
-  const themeIcon = document.getElementById('themeIcon');
-
-  function updateSocialIcons(mode) {
-    const socialIcons = document.querySelectorAll('.social-icon');
-    socialIcons.forEach(icon => {
-      const newSrc = mode === 'dark' ? icon.getAttribute('data-dark') : icon.getAttribute('data-light');
-      if (newSrc) {
-        icon.src = newSrc;
-      }
-    });
-  }
-
-  function setTheme(mode) {
-    if (mode === 'dark') {
-      document.body.classList.add('dark-mode');
-      themeIcon.textContent = 'dark_mode';
-      themeSwitcher.setAttribute('aria-pressed', 'true');
-    } else {
-      document.body.classList.remove('dark-mode');
-      themeIcon.textContent = 'wb_sunny';
-      themeSwitcher.setAttribute('aria-pressed', 'false');
+// Typewriter Effect for Hero Subtitle
+const typewriterElement = document.querySelector('.typewriter');
+const typeTexts = ["BACKEND DEVELOPER", "PROBLEM SOLVER", "TECH VISIONARY"];
+let typeIndex = 0, charIndex = 0;
+let currentText = "";
+let isDeleting = false;
+const typingSpeed = 100, pauseBetween = 2000;
+function type() {
+  if (typeIndex >= typeTexts.length) typeIndex = 0;
+  currentText = typeTexts[typeIndex];
+  if (!isDeleting) {
+    typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+    charIndex++;
+    if (charIndex === currentText.length) {
+      isDeleting = true;
+      setTimeout(type, pauseBetween);
+      return;
     }
-    localStorage.setItem('theme', mode);
-    updateSocialIcons(mode);
+  } else {
+    typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+    charIndex--;
+    if (charIndex === 0) { isDeleting = false; typeIndex++; }
   }
+  setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+}
+if (typewriterElement) type();
 
-  // Retrieve saved theme or default to dark (now dark mode is default)
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  setTheme(savedTheme);
-
-  if (themeSwitcher) {
-    themeSwitcher.addEventListener('click', () => {
-      const currentMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-      const newMode = currentMode === 'light' ? 'dark' : 'light';
-      setTheme(newMode);
-    });
+// Glitch Effect on Portrait (targeting .glitch-effect within .hero-portrait)
+const glitchElement = document.querySelector('.hero-portrait .glitch-effect');
+function triggerGlitch() {
+  if (glitchElement) {
+    glitchElement.classList.add('active-glitch');
+    setTimeout(() => { glitchElement.classList.remove('active-glitch'); }, 500);
   }
+}
+setInterval(() => { if (Math.random() < 0.3) triggerGlitch(); }, 5000);
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  if (menuToggle && mobileNav) {
-    menuToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('open');
-      const isOpen = mobileNav.classList.contains('open');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.querySelector('.material-icons').textContent = isOpen ? 'close' : 'menu';
-    });
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.querySelector('.material-icons').textContent = 'menu';
+// Navigation Bar Scroll Effects (targeting .brutal-nav)
+const navBar = document.querySelector('.brutal-nav');
+function handleScroll() {
+  let scrollY = window.scrollY;
+  if (scrollY > 100) {
+    navBar.classList.add('shrink');
+  } else {
+    navBar.classList.remove('shrink');
+  }
+}
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(handleScroll, 50);
+});
+
+// Intersection Observer for Scroll Animations with Desktop Fallback
+const animateOnScroll = () => {
+  const elements = document.querySelectorAll('.animate-on-scroll');
+  if (window.innerWidth > 1024) {
+    elements.forEach(el => el.classList.add('animated'));
+  } else if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
       });
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+    elements.forEach(el => observer.observe(el));
+  } else {
+    elements.forEach(el => el.classList.add('animated'));
   }
+};
+animateOnScroll();
 
-  // Custom Cursor: Only enable on non-touch devices
-  const customCursor = document.querySelector('.custom-cursor');
-  if (customCursor && window.matchMedia('(hover: hover)').matches) {
-    // Update cursor position on mouse move
-    document.addEventListener('mousemove', (e) => {
-      customCursor.style.top = e.clientY + 'px';
-      customCursor.style.left = e.clientX + 'px';
-    });
+// Menu Highlighting Based on Visible Section
+const sections = document.querySelectorAll('section.brutal-section');
+const navItems = document.querySelectorAll('.brutal-nav .nav-item');
+function highlightMenu() {
+  let currentSection = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.pageYOffset >= sectionTop - 150) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+  navItems.forEach(item => {
+    item.classList.remove("active");
+    if (item.getAttribute("data-section") === currentSection) {
+      item.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll", highlightMenu);
 
-    // Pulse effect on click
-    document.addEventListener('mousedown', () => {
-      customCursor.classList.add('pulse');
-    });
-    document.addEventListener('mouseup', () => {
-      customCursor.classList.remove('pulse');
-    });
+// Projects - Tilt Effect for Project Cards
+const projectCards = document.querySelectorAll('.project-item');
+projectCards.forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    gsap.to(card, { rotationY: x / 20, rotationX: -y / 20, ease: 'power2.out', duration: 0.3 });
+  });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, { rotationY: 0, rotationX: 0, ease: 'power2.out', duration: 0.5 });
+  });
+});
 
-    // Add hover effects for interactive elements (links and buttons)
-    const interactiveElements = document.querySelectorAll('a, button');
-    interactiveElements.forEach((el) => {
-      el.addEventListener('mouseenter', () => {
-        customCursor.classList.add('hovered');
-      });
-      el.addEventListener('mouseleave', () => {
-        customCursor.classList.remove('hovered');
-      });
-    });
+// Contact Form Submission with Loading Feedback
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const submitBtn = this.querySelector('.submit-btn');
+    submitBtn.classList.add('loading');
+    setTimeout(() => {
+      submitBtn.classList.remove('loading');
+      alert("Message sent successfully!");
+      contactForm.reset();
+    }, 2000);
+  });
+}
+
+// Dark Mode Toggle with Preference Saving
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")){
+    localStorage.setItem("theme", "dark");
+    darkModeToggle.innerHTML = '<span class="toggle-icon">☀️</span>';
+  } else {
+    localStorage.setItem("theme", "light");
+    darkModeToggle.innerHTML = '<span class="toggle-icon">🌙</span>';
   }
-})();
+});
+window.addEventListener("DOMContentLoaded", () => {
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark-mode");
+    darkModeToggle.innerHTML = '<span class="toggle-icon">☀️</span>';
+  }
+});
+
+// Scroll-to-Top Functionality
+const scrollToTop = document.querySelector(".scroll-to-top");
+if (scrollToTop) {
+  scrollToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
