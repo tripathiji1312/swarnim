@@ -1,6 +1,6 @@
 // Typewriter Effect for Hero Subtitle
 const typewriterElement = document.querySelector('.typewriter');
-const typeTexts = ["BACKEND DEVELOPER", "PROBLEM SOLVER", "TECH VISIONARY"];
+const typeTexts = ["BACKEND DEVELOPMENT ENTHUSIAST", "PROBLEM SOLVER", "TECH VISIONARY"];
 let typeIndex = 0, charIndex = 0;
 let currentText = "";
 let isDeleting = false;
