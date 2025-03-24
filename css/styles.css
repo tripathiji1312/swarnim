@@ -423,7 +423,7 @@ body.dark-mode .animated-blob {
 .skill-item {
   border: 2px solid var(--border-color);
   padding: 1rem;
-  width: calc(50% - 1rem);
+  width: calc(100% - 1rem);
   position: relative;
   background: var(--bg-color);
 }
