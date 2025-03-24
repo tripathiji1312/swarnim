@@ -347,7 +347,7 @@ body.dark-mode .animated-blob {
   margin: 1rem auto;
 }
 
-/* Timeline Styles - Improved spacing and centering */
+/* Timeline Styles */
 .about-content {
   max-width: 800px;
   margin: 0 auto;
@@ -423,7 +423,7 @@ body.dark-mode .animated-blob {
 .skill-item {
   border: 2px solid var(--border-color);
   padding: 1rem;
-  width: calc(100% - 1rem);
+  width: calc(50% - 1rem);
   position: relative;
   background: var(--bg-color);
 }
@@ -702,4 +702,15 @@ footer {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.6s ease-out;
+}
+
+/* Mobile adjustments for Skills Section */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+  }
+
+  .skill-item {
+    width: 100%;
+  }
 }
