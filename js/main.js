@@ -25,8 +25,8 @@ function type() {
 }
 if (typewriterElement) type();
 
-// Glitch Effect on Portrait (targeting .glitch-effect within .hero-portrait)
-const glitchElement = document.querySelector('.hero-portrait .glitch-effect');
+// Glitch Effect on Hero Portrait's Glitch Overlay
+const glitchElement = document.querySelector('.glitch-effect');
 function triggerGlitch() {
   if (glitchElement) {
     glitchElement.classList.add('active-glitch');
@@ -35,7 +35,7 @@ function triggerGlitch() {
 }
 setInterval(() => { if (Math.random() < 0.3) triggerGlitch(); }, 5000);
 
-// Navigation Bar Scroll Effects (targeting .brutal-nav)
+// Navigation Bar Scroll Effects
 const navBar = document.querySelector('.brutal-nav');
 function handleScroll() {
   let scrollY = window.scrollY;
@@ -51,7 +51,7 @@ window.addEventListener('scroll', () => {
   scrollTimeout = setTimeout(handleScroll, 50);
 });
 
-// Intersection Observer for Scroll Animations with Desktop Fallback
+// Intersection Observer for Scroll Animations (fallback for mobile)
 const animateOnScroll = () => {
   const elements = document.querySelectorAll('.animate-on-scroll');
   if (window.innerWidth > 1024) {
@@ -92,51 +92,42 @@ function highlightMenu() {
 }
 window.addEventListener("scroll", highlightMenu);
 
-// Projects - Tilt Effect for Project Cards
+// GSAP Tilt Effect for Project Cards
 const projectCards = document.querySelectorAll('.project-item');
 projectCards.forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    gsap.to(card, { rotationY: x / 20, rotationX: -y / 20, ease: 'power2.out', duration: 0.3 });
+    if (typeof gsap !== 'undefined') {
+      gsap.to(card, { rotationY: x / 20, rotationX: -y / 20, ease: 'power2.out', duration: 0.3 });
+    }
   });
   card.addEventListener('mouseleave', () => {
-    gsap.to(card, { rotationY: 0, rotationX: 0, ease: 'power2.out', duration: 0.5 });
+    if (typeof gsap !== 'undefined') {
+      gsap.to(card, { rotationY: 0, rotationX: 0, ease: 'power2.out', duration: 0.5 });
+    }
   });
 });
 
-// Contact Form Submission with Loading Feedback
+// Contact Form Submission
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    const submitBtn = this.querySelector('.submit-btn');
-    submitBtn.classList.add('loading');
-    setTimeout(() => {
-      submitBtn.classList.remove('loading');
-      alert("Message sent successfully!");
-      contactForm.reset();
-    }, 2000);
+    alert("Message sent successfully!");
+    contactForm.reset();
   });
 }
 
-// Dark Mode Toggle with Preference Saving
+// Dark Mode Toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
   if (document.body.classList.contains("dark-mode")){
-    localStorage.setItem("theme", "dark");
     darkModeToggle.innerHTML = '<span class="toggle-icon">☀️</span>';
   } else {
-    localStorage.setItem("theme", "light");
     darkModeToggle.innerHTML = '<span class="toggle-icon">🌙</span>';
-  }
-});
-window.addEventListener("DOMContentLoaded", () => {
-  if(localStorage.getItem("theme") === "dark"){
-    document.body.classList.add("dark-mode");
-    darkModeToggle.innerHTML = '<span class="toggle-icon">☀️</span>';
   }
 });
 

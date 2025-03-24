@@ -6,14 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Brutalist Portfolio of Swarnim Tripathi: A raw and unapologetic journey in backend development and design." />
-  <meta property="og:title" content="Swarnim Tripathi" />
+  <meta property="og:title" content="Swarnim Tripathi | Brutalist Portfolio" />
   <meta property="og:description" content="A backend developer’s brutally raw portfolio." />
-  <meta property="og:image" content="./assets/profile.jpg" />
-  <title>Swarnim Tripathi</title>
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+  <title>Swarnim Tripathi | Brutalist Portfolio</title>
 
-  <!-- Google Fonts for Monospaced Brutalist Feel -->
+  <!-- Google Fonts for Brutalist Monospaced Look -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- GSAP Library v3.11.4 -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <!-- Main JavaScript -->
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -26,13 +31,15 @@
   <div class="content-layer">
     <!-- Header with Brutalist Vertical Navigation -->
     <header>
-      <nav class="brutal-nav">
+      <nav class="brutal-nav" aria-label="Main Navigation">
         <a class="nav-item active" href="#hero" data-section="hero">Home</a>
         <a class="nav-item" href="#about" data-section="about">About</a>
         <a class="nav-item" href="#skills" data-section="skills">Skills</a>
         <a class="nav-item" href="#projects" data-section="projects">Projects</a>
         <a class="nav-item" href="#contact" data-section="contact">Contact</a>
       </nav>
+      <!-- Mobile Navigation Toggle -->
+      <button id="mobile-nav-toggle" aria-label="Toggle Mobile Navigation">☰</button>
     </header>
 
     <!-- Main Content -->
@@ -41,33 +48,36 @@
       <section id="hero" class="brutal-section animate-on-scroll">
         <div class="hero-content">
           <div class="hero-text">
-            <h1 class="hero-title">SWARNIM TRIPATHI</h1>
+            <!-- Hero title with subtle glitch animation -->
+            <h1 class="hero-title subtle-glitch">SWARNIM TRIPATHI</h1>
             <p class="hero-subtitle typewriter"></p>
           </div>
-          <!-- <div class="hero-portrait">
-            <img src="assets/profile.jpg" alt="Portrait" id="portrait" class="portrait-img" />
+          <!-- HERO-PORTRAIT: Keep structure and glitch effect, but remove image -->
+          <div class="hero-portrait">
+            <!-- Image removed -->
             <div class="glitch-effect"></div>
-          </div> -->
+          </div>
         </div>
         <div class="scroll-indicator">
           <span>SCROLL</span>
         </div>
       </section>
 
-      <!-- ABOUT SECTION WITH TIMELINE -->
+      <!-- ABOUT SECTION (Revamped for world-class design) -->
       <section id="about" class="brutal-section animate-on-scroll">
-        <div class="section-content">
+        <div class="section-content about-content">
           <h2 class="section-title">About Me</h2>
           <div class="brutal-divider"></div>
           <p>
-            Hello, I’m Swarnim Tripathi. I’m a fiercely passionate backend developer and creative problem
-            solver from Lucknow, currently studying at VIT Chennai. I believe in breaking the mold –
-            embracing raw, unpolished code and design that speaks its truth.
+            Hello, I’m Swarnim Tripathi. I’m a fiercely passionate backend developer and creative problem solver from
+            Lucknow,
+            currently studying at VIT Chennai. I believe in breaking the mold – embracing raw, unpolished code and
+            design that speaks its truth.
           </p>
           <p>
-            My coding journey began in 2020 (9th grade) when I first discovered the power of programming.
-            Since then, I’ve built my skills through challenging projects and continuous learning, pushing
-            the boundaries of conventional design.
+            My coding journey began in 2020 (9th grade) when I discovered the power of programming. Since then, I’ve
+            honed my skills through challenging projects and continuous learning, pushing the boundaries of conventional
+            design.
           </p>
           <div class="timeline">
             <div class="timeline-item">
@@ -79,15 +89,13 @@
             <div class="timeline-item">
               <div class="timeline-date">2022 - 2023</div>
               <div class="timeline-content">
-                Developed first substantial projects; began exploring backend technologies such as
-                Python and Flask.
+                Developed first substantial projects; began exploring backend technologies such as Python and Flask.
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-date">2024</div>
               <div class="timeline-content">
-                Advanced my education at VIT Chennai while mastering new frameworks and coding
-                paradigms.
+                Advanced my education at VIT Chennai while mastering new frameworks and paradigms.
               </div>
             </div>
             <div class="timeline-item">
@@ -144,7 +152,7 @@
         </div>
       </section>
 
-      <!-- PROJECTS SECTION WITH GITHUB LINKS -->
+      <!-- PROJECTS SECTION (Hover effect remains enhanced) -->
       <section id="projects" class="brutal-section animate-on-scroll">
         <div class="section-content">
           <h2 class="section-title">Projects</h2>
@@ -158,8 +166,7 @@
               <div class="project-desc">
                 <h3 class="project-title">Decision Tree Regressor with MAE</h3>
                 <p class="project-desc-text">
-                  A futuristic machine learning decision tree that predicts house prices using
-                  advanced metrics.
+                  A futuristic machine learning decision tree that predicts house prices using advanced metrics.
                 </p>
                 <p class="project-timestamp">[ 2024 ]</p>
                 <div class="project-tags">
@@ -179,8 +186,7 @@
               <div class="project-desc">
                 <h3 class="project-title">Expense Tracker</h3>
                 <p class="project-desc-text">
-                  A command-line financial tracker designed to simplify budgeting and expense
-                  management.
+                  A command-line financial tracker designed to simplify budgeting and expense management.
                 </p>
                 <p class="project-timestamp">[ 2022 ]</p>
                 <div class="project-tags">
@@ -259,16 +265,16 @@
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER with Dynamic Year -->
     <footer>
-      <p class="footer-text">© 2023 Swarnim Tripathi. All rights reserved.</p>
+      <p class="footer-text">© <span id="year"></span> Swarnim Tripathi. All rights reserved.</p>
     </footer>
 
-    <!-- Scroll-to-Top Indicator -->
-    <div class="scroll-to-top">↑</div>
+    <!-- SCROLL-TO-TOP INDICATOR -->
+    <div class="scroll-to-top" tabindex="0" role="button" aria-label="Scroll to top">↑</div>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-mode-toggle">
+    <!-- DARK MODE TOGGLE with Improved Animation -->
+    <button id="dark-mode-toggle" aria-label="Toggle Dark Mode">
       <span class="toggle-icon">🌙</span>
     </button>
   </div>
